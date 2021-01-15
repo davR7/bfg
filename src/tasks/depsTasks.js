@@ -1,8 +1,8 @@
-const gulp = require("gulp")
 const del = require("del")
+const gulp = require("gulp")
 const merge = require("merge-stream")
 
-function cleanVendor(){
+function noDeps(){
   return del(["./build/vendor/**"])
 }
 
@@ -25,7 +25,7 @@ function materializeTask(){
 }
 
 module.exports = {
-  cleanVendor,
+  noDeps,
   bootstrapTask,
   materializeTask
 }
