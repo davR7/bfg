@@ -1,12 +1,16 @@
 /*===============IMPORT OF ALL SASS STYLES==================*/
 
 //1- Folder Abstract
+@import "./abstract/variables";
 
 //2- Folder Base
+@import "./base/reset";
+@import "./base/global";
 
 //3- Folder Layout
 
 //4- Folder Component
+@import "./component/bfg-description";
 
 //5- Folder Theme
 
