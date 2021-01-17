@@ -2,14 +2,14 @@ const gulp = require('gulp')
 const series = gulp.series
 const parallel = gulp.parallel
 
-const { cssTask, jsTask } = require('./src/tasks/appTasks')
-const { startBS, reloadBS } = require('./src/tasks/serverTasks')
-const { noDeps, bootstrapTask, materializeTask } = require('./src/tasks/depsTasks')
+const { cssTask, jsTask } = require('./d-tasks/appTasks')
+const { startBS, reloadBS } = require('./d-tasks/serverTasks')
+const { noDeps, bootstrapTask, materializeTask } = require('./d-tasks/depsTasks')
 
 //Watch Files
 function watchFiles(){
-  gulp.watch('./src/sass/**/*.*', series(cssTask, reloadBS))
-  gulp.watch('./src/js/**/*.*', jsTask)
+  gulp.watch('./d-sass/**/*.*', series(cssTask, reloadBS))
+  gulp.watch('./d-javascript/**/*.*', series(jsTask, reloadBS))
   gulp.watch('./**/*.html', reloadBS)
 }
 
