@@ -6,21 +6,21 @@ const rename = require('gulp-rename')
 const cleanCSS = require('gulp-clean-css')
 
 function cssTask(){
-  return gulp.src("./src/sass/style.scss")
+  return gulp.src("./d-sass/style.scss")
     .pipe(sass().on('error', sass.logError))
     .pipe(rename({ suffix: ".min" }))
     .pipe(cleanCSS())
-    .pipe(gulp.dest("./build/min-css"))
+    .pipe(gulp.dest("./b-min-css"))
 }
 
 function jsTask(){
-  return gulp.src("./src/js/*.js")
+  return gulp.src("./d-javascript/*.js")
     .pipe(babel({
       presets: ['@babel/env']
     }))
     .pipe(uglify())
     .pipe(rename({ suffix: ".min" }))
-    .pipe(gulp.dest("./build/min-js")) 
+    .pipe(gulp.dest("./b-min-js")) 
 }
 
 module.exports = {
