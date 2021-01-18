@@ -3,7 +3,7 @@ const gulp = require("gulp")
 const merge = require("merge-stream")
 
 function noDeps(){
-  return del(["./build/vendor/**"])
+  return del(["./b-vendor/**"])
 }
 
 function bootstrapTask(){
